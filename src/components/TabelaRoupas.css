@@ -1,0 +1,566 @@
+.tabela-roupas-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tabela-header {
+  padding: 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filtro-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filtro-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s;
+  min-width: 120px;
+}
+
+.filtro-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.filtro-input.filtro-id {
+  min-width: 80px;
+  text-align: center;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.ordenacao-select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 120px;
+}
+
+.ordenacao-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-limpar-filtros {
+  padding: 8px 16px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-limpar-filtros:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+  color: #1f2937;
+}
+
+.btn-limpar-filtros:active {
+  transform: translateY(1px);
+}
+
+.tabela-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.tabela-info span:first-child {
+  font-weight: 600;
+  color: white;
+  font-size: 15px;
+}
+
+.filtros-ativos {
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-limpar-filtros-inline {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-limpar-filtros-inline:hover {
+  background-color: #2563eb;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+  border-radius: 0 0 15px 15px;
+  flex: 1;
+  width: 100%;
+}
+
+.tabela-roupas {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 800px;
+}
+
+.tabela-roupas th {
+  background: #f8f9fa;
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tabela-roupas td {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.tabela-roupas tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+
+.categoria-badge {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+}
+
+.categoria-camisetas {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.categoria-calças {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.categoria-vestidos {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.categoria-jaquetas {
+  background: #e8f5e8;
+  color: #388e3c;
+}
+
+.categoria-shorts {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.categoria-blusas {
+  background: #f1f8e9;
+  color: #689f38;
+}
+
+.categoria-saias {
+  background: #fff8e1;
+  color: #ffa000;
+}
+
+.cor-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cor-circulo {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.estoque-badge {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+}
+
+.estoque-ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.estoque-baixo {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.acoes-botoes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-editar,
+.btn-remover {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-editar:hover {
+  background: #e3f2fd;
+  transform: scale(1.1);
+}
+
+.btn-remover:hover {
+  background: #ffebee;
+  transform: scale(1.1);
+}
+
+.sem-dados {
+  padding: 60px 40px;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  background: #f8f9fa;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sem-dados p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .tabela-header {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .filtros {
+    gap: 15px;
+  }
+  
+  .filtro-input {
+    min-width: 250px;
+    padding: 10px 15px;
+  }
+  
+  .ordenacao-select {
+    min-width: 160px;
+    padding: 10px 15px;
+  }
+  
+  .tabela-roupas th,
+  .tabela-roupas td {
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabela-roupas-container {
+    margin: 0;
+    border-radius: 12px;
+  }
+  
+  .tabela-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filtro-grupo {
+    width: 100%;
+  }
+  
+  .filtro-input,
+  .ordenacao-select {
+    width: 100%;
+  }
+  
+  .btn-limpar-filtros {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tabela-info {
+    text-align: center;
+  }
+  
+  .tabela-wrapper {
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .tabela-roupas {
+    font-size: 13px;
+    min-width: 700px;
+  }
+  
+  .tabela-roupas th,
+  .tabela-roupas td {
+    padding: 10px 8px;
+  }
+  
+  .categoria-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-width: 70px;
+  }
+  
+  .cor-indicator {
+    gap: 6px;
+  }
+  
+  .cor-circulo {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .estoque-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  
+  .acoes-botoes {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .btn-editar,
+  .btn-remover {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    padding: 6px;
+  }
+  
+  .sem-dados {
+    padding: 40px 20px;
+  }
+  
+  .sem-dados p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabela-roupas-container {
+    margin: 0;
+    border-radius: 10px;
+  }
+  
+  .tabela-header {
+    padding: 15px;
+    gap: 12px;
+  }
+  
+  .filtros {
+    gap: 10px;
+  }
+  
+  .filtro-input,
+  .ordenacao-select {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .tabela-info {
+    font-size: 12px;
+  }
+  
+  .tabela-wrapper {
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .tabela-roupas {
+    font-size: 12px;
+    min-width: 600px;
+  }
+  
+  .tabela-roupas th,
+  .tabela-roupas td {
+    padding: 8px 6px;
+  }
+  
+  .categoria-badge {
+    padding: 3px 6px;
+    font-size: 10px;
+    min-width: 60px;
+  }
+  
+  .cor-indicator {
+    gap: 4px;
+  }
+  
+  .cor-circulo {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .estoque-badge {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+  
+  .acoes-botoes {
+    gap: 4px;
+  }
+  
+  .btn-editar,
+  .btn-remover {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    padding: 4px;
+  }
+  
+  .sem-dados {
+    padding: 30px 15px;
+  }
+  
+  .sem-dados p {
+    font-size: 13px;
+  }
+}
+
+/* Novos estilos para produtos */
+.descricao-text {
+  font-size: 0.9em;
+  color: #666;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.marca-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.marca-nike { background-color: #e8f5e8; color: #2d5a2d; }
+.marca-adidas { background-color: #e8f0ff; color: #1a365d; }
+.marca-puma { background-color: #fff5e8; color: #8b4513; }
+.marca-reebok { background-color: #ffe8e8; color: #8b0000; }
+.marca-under-armour { background-color: #f0e8ff; color: #4a148c; }
+.marca-fila { background-color: #e8fff0; color: #006400; }
+.marca-asics { background-color: #fff8e8; color: #b8860b; }
+.marca-new-balance { background-color: #e8f8ff; color: #0066cc; }
+.marca-converse { background-color: #ffe8f8; color: #cc0066; }
+.marca-vans { background-color: #f8ffe8; color: #669900; }
+
+.tamanho-badge {
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  min-width: 40px;
+  display: inline-block;
+}
+
+.valor-text {
+  font-weight: 600;
+  color: #2d5a2d;
+  font-size: 1.1em;
+} 
